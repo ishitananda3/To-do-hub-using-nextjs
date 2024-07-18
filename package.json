@@ -3,15 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-    "dev:frontend": "next dev",
-    "dev:backend": "(python src/chatbot/app.py || python3 src/chatbot/app.py)",
-    "install-python-packages": "pip install -r requirements.txt",
+    "dev": "next dev",
     "build": "next build",
-    "start": "concurrently \"next start\" \" npm run dev:backend\"",
+    "start": "next start",
     "lint": "eslint . --fix"
-  },
-  "dependencies": {
+  },  "dependencies": {
     "@draft-js-plugins/editor": "^4.1.4",
     "@draft-js-plugins/static-toolbar": "^4.1.4",
     "@aws-sdk/client-s3": "^3.556.0",

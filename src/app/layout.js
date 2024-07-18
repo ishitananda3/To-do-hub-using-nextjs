@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/positsource_logo.jpg" />
+        <link rel="shortcut icon" href="https://r2.erweima.ai/imgcompressed/compressed_723ad398c6d2751f92e24af448cb22aa.webp" />
       </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>

@@ -11,7 +11,6 @@ import Navbar from "@/src/components/navbar/Navbar"
 import Sidebar from "@/src/components/Sidebar"
 import Subnav from "@/src/components/navbar/Subnav"
 import { SyncupGlobalContextProvider } from "@/src/context/SyncUpStore"
-import Chatbot from "@/src/components/chatbot"
 
 function Layout({ children }) {
   const [isChatOpen, setChatOpen] = useState(false)
@@ -112,48 +111,6 @@ function Layout({ children }) {
               }}
             >
               {children}
-              <Paper
-                elevation={3}
-                onClick={toggleChat}
-                style={{
-                  position: "fixed",
-                  bottom: "5vh",
-                  right: "2vw",
-                  zIndex: 5,
-                  cursor: "pointer",
-                  borderRadius: "50%",
-                  padding: 12,
-                  backgroundColor: isChatOpen ? "grey" : "#683ab7",
-                }}
-              >
-                {isChatOpen ? (
-                  <CloseIcon style={{ fontSize: 30, color: "white" }} />
-                ) : (
-                  <ChatIcon style={{ fontSize: 30, color: "white" }} />
-                )}
-              </Paper>
-              <Popover
-                open={isChatOpen}
-                anchorEl={anchorEl}
-                onClose={closeChatbot}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                transformOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-                slotProps={{
-                  paper: {
-                    sx: { borderRadius: "1rem" },
-                  },
-                }}
-              >
-                <Paper sx={{ borderRadius: "20px" }}>
-                  <Chatbot onClose={closeChatbot} />
-                </Paper>
-              </Popover>
             </Grid>
           </Grid>
         </Grid>
